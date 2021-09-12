@@ -1,0 +1,54 @@
+{
+  "files": {
+    "cogs/redditcheck.py": [
+      {
+        "id": "2e2b4e3a-dc2f-49c8-88b2-8cc743e3d808",
+        "line": 1,
+        "version": 6216,
+        "index": 0
+      },
+      {
+        "id": "578f7e38-aa0c-4137-929c-b17dfb74cc5d",
+        "line": 1,
+        "version": 6216,
+        "index": 0
+      },
+      {
+        "id": "d01b0284-62a6-4829-bf51-41da82c5aecb",
+        "line": 47,
+        "version": 6216,
+        "index": 1378
+      },
+      {
+        "id": "6316f6e9-4055-4f93-9285-729699ca40e8",
+        "line": 108,
+        "version": 6216,
+        "index": 3232
+      }
+    ],
+    "cogs/yaeautomsg.py": [
+      {
+        "id": "cfa20dce-40df-4c86-8a0f-14f9396fefc5",
+        "line": 86,
+        "version": 964,
+        "index": 3572
+      }
+    ],
+    "cogs/yaemessage.py": [
+      {
+        "id": "5a9a8823-f2a8-4824-b3fb-ccdf624ecaeb",
+        "line": 7,
+        "version": 10,
+        "index": 101
+      }
+    ],
+    "main.py": [
+      {
+        "id": "9017ac1e-a2db-4188-b571-9c5481256073",
+        "line": 34,
+        "version": 412,
+        "index": 827
+      }
+    ]
+  }
+}

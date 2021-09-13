@@ -50,7 +50,7 @@ class Presence(commands.Cog):
   @commands.command(name = "ping", hidden = True, aliases=["latency"])
   @commands.has_permissions(administrator=True)
   async def ping(self,ctx):
-    await ctx.send(f"{self.bot.latency}ms")
+    await ctx.send(f"beep boop{round(self.bot.latency)}ms")
 
 def setup(bot):
   bot.add_cog(Presence(bot))        

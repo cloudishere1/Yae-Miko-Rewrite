@@ -17,7 +17,7 @@ class Yaemod(commands.Cog):
   def __init__(self,bot):
     self.bot = bot
 
-  @commands.command()
+  @commands.command(name = "ban", help="bans a user", hidden = True)
   @commands.has_permissions(ban_members=True)
   async def ban(self, ctx, user: commands.UserConverter = None,*,reason = None):
 
@@ -67,7 +67,7 @@ class Yaemod(commands.Cog):
     
     try:
       await ctx.guild.ban(user, reason=f'{reason} :banned by {ctx.author}')
-      await msg.edit(content = f'get outahere')
+      await msg.edit(content = f'Get out of here! <:YaeFeet:852664359696072734>')
       await sleep(1)
       await ctx.send(f'{user} has been banned, Reason: {reason}')
 

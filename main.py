@@ -1,7 +1,7 @@
 import os
 import discord
 
-from keep_alive import keep_alive
+#from keep_alive import keep_alive
 from discord.ext import commands
 
 my_secret = os.environ['DToken']
@@ -39,5 +39,5 @@ for filename in os.listdir('./cogs'):
     bot.load_extension(f'cogs.{filename[:-3]}')
     print(f"loaded {filename}")
         
-keep_alive()
+#keep_alive()
 bot.run(my_secret)

@@ -29,9 +29,9 @@
     "cogs/yaeautomsg.py": [
       {
         "id": "cfa20dce-40df-4c86-8a0f-14f9396fefc5",
-        "line": 86,
-        "version": 964,
-        "index": 3572
+        "line": 41,
+        "version": 1057,
+        "index": 1203
       }
     ],
     "cogs/yaemessage.py": [
@@ -46,8 +46,8 @@
       {
         "id": "9017ac1e-a2db-4188-b571-9c5481256073",
         "line": 34,
-        "version": 412,
-        "index": 827
+        "version": 432,
+        "index": 828
       }
     ]
   }

@@ -89,7 +89,7 @@ class Yae_automsg(commands.Cog):
 
     if role not in ctx.author.roles:
       await ctx.author.add_roles(role)
-      await ctx.send(f"<@&851508885898657882> is given to {ctx.author.mention}.")
+      await ctx.send(f"Shrine Member role is given to {ctx.author.mention}.")
       return
 
     else:

@@ -165,7 +165,7 @@ class Yae_Miko(commands.Cog):
 
     #check if the character exceeded 30 because it is 1 letter per second
     if len(message) > 60:
-      await ctx.send(f"30 character limit exceeded, character count: {len(message)}")
+      await ctx.send(f"60 character limit exceeded, character count: {len(message)}")
       ctx.command.reset_cooldown(ctx)
       return
 

@@ -147,10 +147,10 @@ class Yae_Miko(commands.Cog):
       await ctx.send(f"Target user was not specified.\n`{self.bot.command_prefix}yaedm [@user/user ID] <message>`")
       return
 
-  @commands.command(name = "slowsend", help = "Sends a message one letter at a time. (Character limit: 30)", hidden = True, aliases =["ss", "slow"])
+  @commands.command(name = "slowsend", help = "Sends a message one letter at a time. (Character limit: 60)", hidden = True, aliases =["ss", "slow"])
   @commands.has_any_role(761484787235946498, 852026036471463968,
                        761486609682006026)     
-  @commands.cooldown(1, 30, commands.BucketType.guild)                     
+  @commands.cooldown(1, 60, commands.BucketType.guild)                     
   async def slowsend(self,ctx,channel: commands.TextChannelConverter = None, *, message):
     
     message_split = message.split() #separate each words in a list
@@ -164,8 +164,9 @@ class Yae_Miko(commands.Cog):
         message = message.replace(str(emoji),"👍")
 
     #check if the character exceeded 30 because it is 1 letter per second
-    if len(message) > 30:
+    if len(message) > 60:
       await ctx.send(f"30 character limit exceeded, character count: {len(message)}")
+      ctx.command.reset_cooldown(ctx)
       return
 
     #if the emotes is found in the guild, store them to emote_order list to get the order of each emote

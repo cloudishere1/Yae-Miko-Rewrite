@@ -1,12 +1,13 @@
 import discord
 
+from asyncio import sleep
 from discord.ext import commands
 
 """Commands for yae miko bot to interact in chat
 Permission: Shrine Chief, Cloud, Shrine Guard
 
 ->yae
-  ->sends a message
+  ->sends a message to a channel
 ->reply
   -> replies to a message
 ->edit
@@ -15,6 +16,8 @@ Permission: Shrine Chief, Cloud, Shrine Guard
   -> reacts to a message
 ->yaedm
   -> DMs a user
+-slowsend
+  -> Send a message on a channel one letter at a time  
 """
 
 class Yae_Miko(commands.Cog):
@@ -143,6 +146,55 @@ class Yae_Miko(commands.Cog):
     if isinstance(error, commands.MissingRequiredArgument):
       await ctx.send(f"Target user was not specified.\n`{self.bot.command_prefix}yaedm [@user/user ID] <message>`")
       return
+
+  @commands.command(name = "slowsend", help = "Sends a message one letter at a time. (Character limit: 30)", hidden = True, aliases =["ss", "slow"])
+  #@commands.has_any_role(761484787235946498, 852026036471463968,
+  #                     761486609682006026)     
+  async def slowsend(self,ctx,channel: commands.TextChannelConverter = None, *, message):
+    
+    message_split = message.split() #separate each words in a list
+    emote_order = []
+    loop = 0
+    msg_store = ""
+
+    #check if there's guild emoji in messages then replace them with thumbsup
+    for emoji in ctx.guild.emojis:
+      if str(emoji) in message:
+        message = message.replace(str(emoji),"👍")
+
+    #check if the character exceeded 30 because it is 1 letter per second
+    if len(message) > 30:
+      await ctx.send(f"30 character limit exceeded, character count: {len(message)}")
+      return
+
+    #if the emotes is found in the guild, store them to emote_order list to get the order of each emote
+    for items in message_split:
+      for emotes in ctx.guild.emojis:
+        if str(items) == str(emotes):
+          emote_order.append(items)
+
+    #for each letter, send one letter and then edit to next
+    for letter in message:
+      if letter == "👍":
+        letter = emote_order[0] #replace the thumbsup back to the emoji so that it gets sent as a whole
+        del emote_order[0] #remove them from the list
+      loop += 1
+      msg_store += letter
+      if letter == " ": #if space is found, skip to the next iteration and go to next letter
+        continue
+
+      if loop == 1: #send it at start
+        msg = await channel.send(msg_store)
+      else: #then edit it afterward
+        await msg.edit(content = msg_store)
+      await sleep(1)
+
+  @slowsend.error
+  async def slowsend_error(self,ctx,error):
+    if isinstance(error, commands.MissingRequiredArgument):
+      await ctx.send(f"Channel isn't specified.\n`{self.bot.command_prefix}slowsend [channel] <message>`")
+    elif isinstance(error,commands.CommandOnCooldown):
+      await ctx.send("**Command is still on cooldown**. Please try again after {:.0f} seconds".format(error.retry_after))
 
 def setup(bot):
   bot.add_cog(Yae_Miko(bot))    

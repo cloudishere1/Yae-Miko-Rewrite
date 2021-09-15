@@ -148,8 +148,9 @@ class Yae_Miko(commands.Cog):
       return
 
   @commands.command(name = "slowsend", help = "Sends a message one letter at a time. (Character limit: 30)", hidden = True, aliases =["ss", "slow"])
-  #@commands.has_any_role(761484787235946498, 852026036471463968,
-  #                     761486609682006026)     
+  @commands.has_any_role(761484787235946498, 852026036471463968,
+                       761486609682006026)     
+  @commands.cooldown(1, 30, commands.BucketType.guild)                     
   async def slowsend(self,ctx,channel: commands.TextChannelConverter = None, *, message):
     
     message_split = message.split() #separate each words in a list

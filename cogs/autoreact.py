@@ -22,10 +22,10 @@ class Auto_React(commands.Cog):
       return
 
     #random yaewhat react 
-    #if message.guild != None:
-      #randx = random.random()
-      #if randx < .005:
-        #await message.add_reaction("<:YaeWhat:851097444350689360>") #need new yaewhat
+    if message.guild != None:
+      randx = random.random()
+      if randx < .005:
+        await message.add_reaction("<:YaeWhat:888079405514121237>")
 
     #Yae-Mailbox Embed
     if message.guild == None and message.author != self.bot.user:

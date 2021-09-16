@@ -4,8 +4,8 @@ import datetime
 
 """Autoreact and mailbox
 ->global yaewhat reaction 0.5% chance to trigger
-->Yae's DM Mailbox (mailbox channel id: 874284953356099625)
-->Yaepray reaction on yaepray in yaeshrine(yaeshrine channel id: 862324071579516929)
+->Yae's DM Mailbox (mailbox channel id: 888068697107869756)
+->Yaepray reaction on yaepray in yaeshrine(yaeshrine channel id: 888052924662575104)
 """
 
 from discord.ext import commands
@@ -21,11 +21,11 @@ class Auto_React(commands.Cog):
     if message.author == self.bot.user:
       return
 
-    #random yaewhat react
-    if message.guild != None:
-      randx = random.random()
-      if randx < .005:
-        await message.add_reaction("<:YaeWhat:851097444350689360>")
+    #random yaewhat react 
+    #if message.guild != None:
+      #randx = random.random()
+      #if randx < .005:
+        #await message.add_reaction("<:YaeWhat:851097444350689360>") #need new yaewhat
 
     #Yae-Mailbox Embed
     if message.guild == None and message.author != self.bot.user:
@@ -48,15 +48,15 @@ class Auto_React(commands.Cog):
       embed.set_footer(text= f"User ID:{member_id}")
       embed.timestamp = datetime.datetime.now()
 
-      channel = self.bot.get_channel(874284953356099625)
+      channel = self.bot.get_channel(888068697107869756)
       await channel.send(embed=embed)
       
       return
 
     #yaepray react on yaepray in yaeshrine
     if message.channel.id == 862324071579516929:
-        if message.content.startswith("<:YaePray:856534012570107935>"):
-            await message.add_reaction("<:YaePray:856534012570107935>")
+        if message.content.startswith("<:YaePray:888064916400001035>"):
+            await message.add_reaction("<:YaePray:888064916400001035>")
 
 
 def setup(bot):

@@ -18,32 +18,32 @@ class Presence(commands.Cog):
     self.bot = bot
 
   @commands.command(name = "playing", help='Change the presence status to "Playing <something>', hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)    
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)    
   async def playing(self,ctx,*,game):  
     await self.bot.change_presence(activity=discord.Game(name=game))
 
   @commands.command(name = "watching", help='Change the presence status to "Watching <something>', hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)    
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)
   async def watching(self,ctx,*,watch):
     await self.bot.change_presence(activity = discord.Activity(type=discord.ActivityType.watching, name=watch))
   
   @commands.command(name = "listening", help='Change the presence status to "Listening to <something>', hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)    
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)    
   async def listening(self,ctx,*,listen):
     await self.bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=listen))
   
   @commands.command(name = "streaming", help='Change the presence status to "Streaming <game>', hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)    
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)
   async def streaming(self,ctx,url, * , stream):
     await self.bot.change_presence(activity=discord.Streaming(name=stream, url=url))
 
   @commands.command(name = "nostatus", help='remove the presence status', hidden = True, aliases = ["nst","statusoff"])
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)    
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)
   async def nostatus(self,ctx):
     await self.bot.change_presence(activity = None)  
 

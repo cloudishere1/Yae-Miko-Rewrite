@@ -30,7 +30,7 @@ class Error_Handler(commands.Cog):
       await ctx.send("Dev command only")
 
     elif isinstance(error, commands.CheckFailure):  
-      await ctx.reply("Use this command in <#873402211131097158>.")
+      await ctx.reply("Use this command in <#888053481007611966>.")
 
     elif isinstance(error, commands.MessageNotFound):
       await ctx.send(f"Message does not exist or was deleted.") 

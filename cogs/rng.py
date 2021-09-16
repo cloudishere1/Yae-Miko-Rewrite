@@ -56,27 +56,27 @@ class Play(commands.Cog):
     you = result[choice.lower()]
 
     if yae == you:
-      winner = "**draw.**<:YaeThink:866315816047738880>"
+      winner = "**draw.**<:YaeThink:888065159036297247>"
 
     if yae == 1:
       if you == 2:
-        winner = "**You win!**<:YaeSad2:871040820088815646>"
+        winner = "**You win!**<:YaeDerp:888060749585481749>"
       elif you == 3:
-        winner = "**You lose.**<:YaeSmug:864328107812323328>"
+        winner = "**You lose.**<:YaeSmug:888065400577871872>"
       else:
         pass  
     elif yae == 2:
       if you == 1:
-        winner = "**You lose.**<:YaeSmug:864328107812323328>"
+        winner = "**You lose.**<:YaeSmug:888065400577871872>"
       elif you == 3:
-        winner = "**You win!**<:YaeSad2:871040820088815646>"
+        winner = "**You win!**<:YaeDerp:888060749585481749>"
       else:
         pass  
     elif yae == 3:
       if you == 1:
-        winner = "**You win!**<:YaeSad2:871040820088815646>"
+        winner = "**You win!**<:YaeDerp:888060749585481749>"
       elif you == 2:
-        winner = "**You lose.**<:YaeSmug:864328107812323328>"
+        winner = "**You lose.**<:YaeSmug:888065400577871872>"
       else:
         pass    
     else:

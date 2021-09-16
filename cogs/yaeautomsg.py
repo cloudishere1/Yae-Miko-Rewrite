@@ -7,13 +7,13 @@ from discord.ext import commands
 
 -> on member update
   ->Server Boost message 
-    ->boost role id: 761595654598033438)
-    ->Announcement channel id: 761488446442831874
+    ->boost role id: 888053107601338389)
+    ->Announcement channel id: 888053718182932480
   
 -> on member join
   ->DM the instruction
   ->Welcome message
-    ->Welcome channel id: 851951450186711111
+    ->Welcome channel id: 888054635305250856
 
 ->Auto role
   ->enter
@@ -28,8 +28,8 @@ class Yae_automsg(commands.Cog):
   @commands.Cog.listener()
   async def on_member_update(self,before,after):
   
-    role = discord.utils.get(before.guild.roles, id=761595654598033438)
-    channel = self.bot.get_channel(761488446442831874)
+    role = discord.utils.get(before.guild.roles, id=888053107601338389)
+    channel = self.bot.get_channel(888053718182932480)
 
     if role not in before.roles:
       if role in after.roles:
@@ -40,7 +40,7 @@ class Yae_automsg(commands.Cog):
   async def on_member_join(self,member):
     guild = discord.utils.get(self.bot.guilds, name=member.guild.name)    
 
-    try:
+    """try:
       await member.create_dm()
       await member.dm_channel.send(
           f'Hello {member.name} <a:YaeJump:858327829388066816><a:YaeJump:858327829388066816><a:YaeJump:858327829388066816>, welcome to **{guild.name}**! Make sure to read the <#761486136630575124> to receive your **Shrine Member** role to access the server and get started! \n\n'
@@ -49,9 +49,9 @@ class Yae_automsg(commands.Cog):
           f"If it still does not give you the role, kindly contact **SHRINE CHIEF** or **SHRINE GUARD** for manual roles.\n\nOr you can send a message to me! <a:YaeWink_noBG2:832972418045050900>"
         )
     except:
-      pass    
+      pass    """
 
-    channel = self.bot.get_channel(851951450186711111)
+    channel = self.bot.get_channel(888054635305250856)
 
     emb_colour = 0xB320B6
     emb_thumbnail = member.avatar_url
@@ -81,7 +81,7 @@ class Yae_automsg(commands.Cog):
   @commands.command(name='enter', help= 'gives shrine member role', hidden = True)
   async def enter(self, ctx):
     
-    role = discord.utils.get(ctx.guild.roles, id=851508885898657882)
+    role = discord.utils.get(ctx.guild.roles, id=888055555661398036)
     await ctx.message.delete()
     
     if ctx.author == self.bot.user:

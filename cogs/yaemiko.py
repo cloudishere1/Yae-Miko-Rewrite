@@ -28,8 +28,8 @@ class Yae_Miko(commands.Cog):
   @commands.command(name='yae',
              help='Sends a message to a specific channel through the bot',
              hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)           
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)        
   async def yae(self, ctx, channel : commands.TextChannelConverter = None, *, message = None):
     
     if ctx.author == self.bot.user:
@@ -51,8 +51,8 @@ class Yae_Miko(commands.Cog):
       name='edit',
       help='edits the specified message link, (can only edit the bot message)',
              hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)     
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)        
   async def edit(self, ctx, message_link: discord.Message, *, new_message=None):
     
     if new_message == None:
@@ -73,8 +73,8 @@ class Yae_Miko(commands.Cog):
   @commands.command(name='reply',
              help='replies to the specified message link',
              hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)     
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)      
   async def reply(self, ctx, message_link: discord.Message, *, message = None):
     
     if message == None:
@@ -92,8 +92,8 @@ class Yae_Miko(commands.Cog):
   @commands.command(name='react',
             help='Reacts to the specified message link with given reaction',
              hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)     
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)        
   async def react(self,ctx, message_link: discord.Message, emoji : commands.EmojiConverter = None):
     
     if emoji == None:
@@ -116,8 +116,8 @@ class Yae_Miko(commands.Cog):
   @commands.command(name = 'yaedm',
             help = "DMs a specified user with given message",
             hidden = True)
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)     
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)     
   async def yaedm(self, ctx, member : commands.MemberConverter, *, message = None):
     
     if message == None:
@@ -127,7 +127,7 @@ class Yae_Miko(commands.Cog):
     try:
       channel = await member.create_dm()
       x = await channel.send(message)
-      mailbox= self.bot.get_channel(874284953356099625)
+      mailbox= self.bot.get_channel(888068697107869756)
       await mailbox.send(f"Message was sent to {member.mention}.\n**User ID**: {member.id}\n"
               f"**Content**: {message}\n"
               f"**Content ID**: {x.id}\n"
@@ -148,8 +148,8 @@ class Yae_Miko(commands.Cog):
       return
 
   @commands.command(name = "slowsend", help = "Sends a message one letter at a time. (Character limit: 60)", hidden = True, aliases =["ss", "slow"])
-  @commands.has_any_role(761484787235946498, 852026036471463968,
-                       761486609682006026)     
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)       
   @commands.cooldown(1, 60, commands.BucketType.guild)                     
   async def slowsend(self,ctx,channel: commands.TextChannelConverter = None, *, message):
     

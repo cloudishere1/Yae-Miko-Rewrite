@@ -13,7 +13,7 @@ Permission: everyone
   -> flip a coin
 -> artifact (flower,feather,sands,goblet,circlet)
   -> generates a random artifact
-  -> artifact rng channel: 873402211131097158
+  -> artifact rng channel: 888053481007611966
 
 """
 
@@ -23,7 +23,7 @@ class Play(commands.Cog):
     self.bot = bot
 
   def artifact_channel(ctx):
-    if ctx.channel.id == 873402211131097158:
+    if ctx.channel.id == 888053481007611966:
       return True
 
   #janken simulator

@@ -17,7 +17,7 @@ from discord.ext import commands
 
 ->Auto role
   ->enter
-    ->to give shrine member role (shrine member role id: 851508885898657882)
+    ->to give shrine member role (shrine member role id: 888055555661398036)
 """
 
 class Yae_automsg(commands.Cog):
@@ -34,18 +34,18 @@ class Yae_automsg(commands.Cog):
     if role not in before.roles:
       if role in after.roles:
         await channel.send(f"Thank you for boosting our shrine {after.mention}!<a:YaeJump:858327829388066816><a:YaeJump:858327829388066816><a:YaeJump:858327829388066816>\n"
-        f"You can create your own custom role and set your color name in <#852005796539662337>, check the pinned messages there for details!<a:YaeStonks:863118022549831700>")
+        f"You can create your own custom role and set your color name in <#888053538012413992>, check the pinned messages there for details!<a:YaeStonks:888090125832167484>")
 
   @commands.Cog.listener()
   async def on_member_join(self,member):
     guild = discord.utils.get(self.bot.guilds, name=member.guild.name)    
 
-    """try:
+    """try: #this is the welcome DM code
       await member.create_dm()
       await member.dm_channel.send(
-          f'Hello {member.name} <a:YaeJump:858327829388066816><a:YaeJump:858327829388066816><a:YaeJump:858327829388066816>, welcome to **{guild.name}**! Make sure to read the <#761486136630575124> to receive your **Shrine Member** role to access the server and get started! \n\n'
+          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to receive your **Shrine Member** role to access the server and get started! \n\n'
           f"If you cannot get the `Shrine Member` role to enter the server after clicking the emote, try it again one more time but do not spam it.\n\n" 
-          f"If it still doesn't work, type the command `!!enter` in <#851951450186711111> in {guild.name}. **I cannot respond to commands in DMs**\n\n"
+          f"If it still doesn't work, type the command `!!enter` in <#888054635305250856> in {guild.name}. **I cannot respond to commands in DMs**\n\n"
           f"If it still does not give you the role, kindly contact **SHRINE CHIEF** or **SHRINE GUARD** for manual roles.\n\nOr you can send a message to me! <a:YaeWink_noBG2:832972418045050900>"
         )
     except:
@@ -62,7 +62,7 @@ class Yae_automsg(commands.Cog):
       "https://media.discordapp.net/attachments/765662367538610198/882288825215377499/ezgif-6-e324bbbb68ff.gif"]
 
     emb_title = f"Welcome to {guild.name} | Genshin Impact!"
-    emb_description = (f"Make sure to read our simple <#761486136630575124> and follow the instructions there to access the server.") 
+    emb_description = (f"Make sure to read our simple <#888054653877633074> and follow the instructions there to access the server.") 
 
     rand = random.choice(emb_image)
 

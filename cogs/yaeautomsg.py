@@ -33,7 +33,7 @@ class Yae_automsg(commands.Cog):
 
     if role not in before.roles:
       if role in after.roles:
-        await channel.send(f"Thank you for boosting our shrine {after.mention}!<a:YaeJump:858327829388066816><a:YaeJump:858327829388066816><a:YaeJump:858327829388066816>\n"
+        await channel.send(f"Thank you for boosting our shrine {after.mention}!<a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>\n"
         f"You can create your own custom role and set your color name in <#888053538012413992>, check the pinned messages there for details!<a:YaeStonks:888090125832167484>")
 
   @commands.Cog.listener()

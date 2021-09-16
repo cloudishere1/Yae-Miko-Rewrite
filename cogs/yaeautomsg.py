@@ -19,6 +19,11 @@ from discord.ext import commands
   ->enter
     ->to give shrine member role (shrine member role id: 888055555661398036)
 """
+"""await member.dm_channel.send(
+          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to receive your **Shrine Member** role to access the server and get started! \n\n'
+          f"If you cannot get the `Shrine Member` role to enter the server after clicking the emote, try it again one more time but do not spam it.\n\n" 
+          f"If it still doesn't work, type the command `!!enter` in <#888054635305250856> in {guild.name}. **I cannot respond to commands in DMs**\n\n"
+          f"If it still does not give you the role, kindly contact **SHRINE CHIEF** or **SHRINE GUARD** for manual roles.\n\nOr you can send a message to me! <a:YaeWink_noBG2:832972418045050900>"""
 
 class Yae_automsg(commands.Cog):
   
@@ -40,16 +45,13 @@ class Yae_automsg(commands.Cog):
   async def on_member_join(self,member):
     guild = discord.utils.get(self.bot.guilds, name=member.guild.name)    
 
-    """try: #this is the welcome DM code
+    try: #this is the welcome DM code
       await member.create_dm()
       await member.dm_channel.send(
-          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to receive your **Shrine Member** role to access the server and get started! \n\n'
-          f"If you cannot get the `Shrine Member` role to enter the server after clicking the emote, try it again one more time but do not spam it.\n\n" 
-          f"If it still doesn't work, type the command `!!enter` in <#888054635305250856> in {guild.name}. **I cannot respond to commands in DMs**\n\n"
-          f"If it still does not give you the role, kindly contact **SHRINE CHIEF** or **SHRINE GUARD** for manual roles.\n\nOr you can send a message to me! <a:YaeWink_noBG2:832972418045050900>"
+          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to get started!'
         )
     except:
-      pass    """
+      pass    
 
     channel = self.bot.get_channel(888054635305250856)
 
@@ -97,3 +99,5 @@ class Yae_automsg(commands.Cog):
 
 def setup(bot):
   bot.add_cog(Yae_automsg(bot))    
+
+  

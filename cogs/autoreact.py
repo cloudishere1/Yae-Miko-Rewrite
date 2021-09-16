@@ -54,7 +54,7 @@ class Auto_React(commands.Cog):
       return
 
     #yaepray react on yaepray in yaeshrine
-    if message.channel.id == 862324071579516929:
+    if message.channel.id == 888052924662575104:
         if message.content.startswith("<:YaePray:888064916400001035>"):
             await message.add_reaction("<:YaePray:888064916400001035>")
 

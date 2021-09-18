@@ -14,6 +14,7 @@ class Memes(commands.Cog):
 
   def __init__(self,bot):
     self.bot = bot
+    self.meme.start()
 
   def cog_unload(self):
     self.meme.cancel()
@@ -26,7 +27,7 @@ class Memes(commands.Cog):
     memes_list = []
     form = ["jpg","png"]
     check = False
-    
+
     try:
       async for submission in subreddit.new(limit = 100):
         memes_list.append(submission)

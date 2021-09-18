@@ -2,7 +2,7 @@ import asyncpraw
 import random
 import os
 
-from discord.ext import commands
+from discord.ext import (commands,tasks)
 
 reddit = asyncpraw.Reddit( client_id = os.environ['r_id'],
                       client_secret = os.environ['r_secret'],
@@ -15,17 +15,20 @@ class Memes(commands.Cog):
   def __init__(self,bot):
     self.bot = bot
 
+  def cog_unload(self):
+    self.meme.cancel()
 
-  @commands.command()
+  @tasks.loop(hours = 1, reconnect = True)
   async def meme(self,ctx):
     
     subreddit = await reddit.subreddit("genshin_memepact")
+    meme_channel = self.bot.get_channel(888054325891461131)
     memes_list = []
     form = ["jpg","png"]
-    print("wut")
     check = False
+    
     try:
-      async for submission in subreddit.new(limit = 25):
+      async for submission in subreddit.new(limit = 100):
         memes_list.append(submission)
 
     except asyncpraw.exceptions.PRAWExcetion as error:
@@ -40,8 +43,12 @@ class Memes(commands.Cog):
       if y[-3:] in form:
         check = True
 
-    await ctx.send(meme.url)
+    await meme_channel.send(meme.url)
 
+  @meme.before_loop
+  async def before_printer(self):
+    print('waiting...')
+    await self.bot.wait_until_ready()
 
       
 def setup(bot):

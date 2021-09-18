@@ -20,7 +20,7 @@ class Memes(commands.Cog):
     self.meme.cancel()
 
   @tasks.loop(hours = 1, reconnect = True)
-  async def meme(self,ctx):
+  async def meme(self):
     
     subreddit = await reddit.subreddit("genshin_memepact")
     meme_channel = self.bot.get_channel(888054325891461131)

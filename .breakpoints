@@ -37,15 +37,15 @@
     "cogs/yaememes.py": [
       {
         "id": "d45f96b1-c7ae-4110-b0fa-82ceecc81d45",
-        "line": 33,
-        "version": 223,
-        "index": 825
+        "line": 35,
+        "version": 304,
+        "index": 888
       },
       {
         "id": "ce80b86b-393a-4c61-8755-ff157c3b61da",
-        "line": 36,
-        "version": 243,
-        "index": 924
+        "line": 38,
+        "version": 304,
+        "index": 971
       }
     ],
     "cogs/yaemessage.py": [

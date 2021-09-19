@@ -19,7 +19,7 @@ class Memes(commands.Cog):
   def cog_unload(self):
     self.meme.cancel()
 
-  @tasks.loop(hours = 1, reconnect = True)
+  @tasks.loop(hours = 3, reconnect = True)
   async def meme(self):
     
     subreddit = await reddit.subreddit("genshin_memepact")

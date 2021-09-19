@@ -33,8 +33,8 @@ class Auto_React(commands.Cog):
       if message.content == "":
           return
       
-      attachment = message.attachment
-
+      attachment = message.attachments
+      
       emb_colour = 0xB320B6
       emb_thumbnail = message.author.avatar_url
       emb_author = message.author

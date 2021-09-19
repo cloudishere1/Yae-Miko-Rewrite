@@ -34,7 +34,8 @@ class Auto_React(commands.Cog):
           return
       
       attachment = message.attachments
-      
+      sticker = message.stickers
+
       emb_colour = 0xB320B6
       emb_thumbnail = message.author.avatar_url
       emb_author = message.author
@@ -57,6 +58,10 @@ class Auto_React(commands.Cog):
         for items in attachment:
           await channel.send(items.url)
 
+      if message.stickers:
+        for stuffs in sticker:
+          await channel.send(stuffs.image_url)
+          
       return
 
     #yaepray react on yaepray in yaeshrine

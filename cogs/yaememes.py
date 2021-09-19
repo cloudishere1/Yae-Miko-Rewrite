@@ -10,6 +10,10 @@ reddit = asyncpraw.Reddit( client_id = os.environ['r_id'],
                       password = os.environ['r_pass'],
                       user_agent = "Yae_Miko")
 
+
+"""Sends a random meme from r/genshin_memepact once every 3 hours"""
+
+
 class Memes(commands.Cog):
 
   def __init__(self,bot):

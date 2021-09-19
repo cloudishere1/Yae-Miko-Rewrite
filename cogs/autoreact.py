@@ -29,10 +29,12 @@ class Auto_React(commands.Cog):
 
     #Yae-Mailbox Embed
     if message.guild == None and message.author != self.bot.user:
-
+      
       if message.content == "":
           return
       
+      attachment = message.attachment
+
       emb_colour = 0xB320B6
       emb_thumbnail = message.author.avatar_url
       emb_author = message.author
@@ -51,6 +53,10 @@ class Auto_React(commands.Cog):
       channel = self.bot.get_channel(888068697107869756)
       await channel.send(embed=embed)
       
+      if message.attachments:
+        for items in attachment:
+          await channel.send(items.url)
+
       return
 
     #yaepray react on yaepray in yaeshrine
@@ -58,6 +64,7 @@ class Auto_React(commands.Cog):
         if message.content.startswith("<:YaePray:888064916400001035>"):
             await message.add_reaction("<:YaePray:888064916400001035>")
 
+  
 
 def setup(bot):
   bot.add_cog(Auto_React(bot))

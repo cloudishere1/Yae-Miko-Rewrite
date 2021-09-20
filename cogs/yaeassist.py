@@ -20,7 +20,7 @@ class Assist(commands.Cog):
 
     helper_channel = { "ch_america" : 889515011125420033,
                       "ch_europe" : 889514974920196106,
-                      "ch_asia" : 889486853617614869,
+                      "ch_asia" : 889514959514521621,
                       "ch_hk/tw/mo" : 889515047682998282}     
 
     wl_roles = { "1" : 889515455939756045,

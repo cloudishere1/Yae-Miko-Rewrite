@@ -73,22 +73,22 @@ class Assist(commands.Cog):
        
     if ctx.channel.id == helper_channel["ch_america"]:
       await ctx.send(f'<@&{helper_roles["america"]}>\n{ctx.author.mention} Needs help for __{reason}__.\n'
-      f'**WL**: {wl}'
+      f'**WL**: {wl}\n'
       f'**UID**: {uid}')
 
     elif ctx.channel.id == helper_channel["ch_europe"]:
       await ctx.send(f'<@&{helper_roles["europe"]}>\n{ctx.author.mention} Needs help for __{reason}__.\n'
-      f'**WL**: {wl}'
+      f'**WL**: {wl}\n'
       f'**UID**: {uid}')
 
     elif ctx.channel.id == helper_channel["ch_asia"]:
       await ctx.send(f'<@&{helper_roles["asia"]}>\n{ctx.author.mention} Needs help for __{reason}__.\n'
-      f'**WL**: {wl}'
+      f'**WL**: {wl}\n'
       f'**UID**: {uid}')
 
     elif ctx.channel.id == helper_channel["ch_hk/tw/mo"]:
       await ctx.send(f'<@&{helper_roles["hk/tw/mo"]}>\n{ctx.author.mention} Needs help for __{reason}__.\n'
-      f'**WL**: {wl}'
+      f'**WL**: {wl}\n'
       f'**UID**: {uid}')
 
     else:

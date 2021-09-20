@@ -8,13 +8,10 @@ class Assist(commands.Cog):
 
   @commands.command(name="assist", help="Pings a helper role based on the channel, Cooldown = 10 minutes")
   @commands.cooldown(1,600, commands.BucketType.member)
-  async def assist(self,ctx,uid, *, reason = "unspecified"):
+  async def assist(self,ctx,*, reason = "unspecified"):
       
     if ctx.author == self.bot.user:
       return
-
-    check = False
-    wl = "Unknown"
 
     helper_roles = { "america" : 889517957904994314,
                     "europe" : 889518004075913297,
@@ -35,31 +32,8 @@ class Assist(commands.Cog):
                 "7" : 889515581462695986,
                 "8" : 889515593982697592}
 
-    if ctx.channel.id not in list(helper_channel.values()):
-      await ctx.message.delete(delay = 5)
-      await ctx.send(f'{ctx.author.mention} Please use this command in <#889506367709274172>.', delete_after = 5)
-      self.assist.reset_cooldown(ctx)
-      return
-
-    if uid == None:
-      await ctx.message.delete(delay=5)
-      await ctx.send(f"{ctx.author.mention}, Please input your UID",delete_after = 5)
-      self.assist.reset_cooldown(ctx)
-      return
-
-    if uid.isdigit() == False:
-      await ctx.message.delete(delay =5)
-      await ctx.send(f"{ctx.author.mention}, Please input a valid UID",delete_after = 5)
-      self.assist.reset_cooldown(ctx)
-      return
-
-    if len(uid) != 9:
-      await ctx.message.delete(delay=5)
-      await ctx.send(f"{ctx.author.mention}, Please input a valid UID, length must be 9 characters",delete_after = 5)
-      self.assist.reset_cooldown(ctx)
-      return
-
-    
+    check = False
+    wl = "Unknown"
 
     for items in list(wl_roles.values()):
       if check == True:
@@ -72,24 +46,16 @@ class Assist(commands.Cog):
             break
        
     if ctx.channel.id == helper_channel["ch_america"]:
-      await ctx.send(f'<@&{helper_roles["america"]}>\n{ctx.author.mention} Needs help for __{reason}__.\n'
-      f'**WL**: {wl}'
-      f'**UID**: {uid}')
+      await ctx.send(f'<@&{helper_roles["america"]}>\n{ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
 
     elif ctx.channel.id == helper_channel["ch_europe"]:
-      await ctx.send(f'<@&{helper_roles["europe"]}>\n{ctx.author.mention} Needs help for __{reason}__.\n'
-      f'**WL**: {wl}'
-      f'**UID**: {uid}')
+      await ctx.send(f'<@&{helper_roles["europe"]}>\n{ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
 
     elif ctx.channel.id == helper_channel["ch_asia"]:
-      await ctx.send(f'<@&{helper_roles["asia"]}>\n{ctx.author.mention} Needs help for __{reason}__.\n'
-      f'**WL**: {wl}'
-      f'**UID**: {uid}')
+      await ctx.send(f'<@&{helper_roles["asia"]}>\n{ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
 
     elif ctx.channel.id == helper_channel["ch_hk/tw/mo"]:
-      await ctx.send(f'<@&{helper_roles["hk/tw/mo"]}>\n{ctx.author.mention} Needs help for __{reason}__.\n'
-      f'**WL**: {wl}'
-      f'**UID**: {uid}')
+      await ctx.send(f'<@&{helper_roles["hk/tw/mo"]}>\n{ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
 
     else:
       await ctx.message.delete()
@@ -102,15 +68,9 @@ class Assist(commands.Cog):
     self.assist.reset_cooldown(ctx)
     
   @assist.error
-  async def assist_error(self,ctx,error):
+  async def slowsend_error(self,ctx,error):
     if isinstance(error,commands.CommandOnCooldown):
       await ctx.send("**Command is still on cooldown**. Please try again after {:.0f} seconds".format(error.retry_after))
-
-    elif isinstance(error,commands.BadArgument):
-      await ctx.message.delete(delay =5)
-      await ctx.send(f"{ctx.author.mention}, Please input a valid UID",delete_after = 5)
-      self.assist.reset_cooldown(ctx)
-   
 
 
 def setup(bot):

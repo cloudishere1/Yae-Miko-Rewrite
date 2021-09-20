@@ -18,7 +18,7 @@ class Assist(commands.Cog):
                     "asia" : 889517911994171422,
                     "hk/tw/mo" : 889518084036132934}
 
-    helper_channel = { "ch_america" : 889514959514521621,
+    helper_channel = { "ch_america" : 889515011125420033,
                       "ch_europe" : 889514974920196106,
                       "ch_asia" : 889486853617614869,
                       "ch_hk/tw/mo" : 889515047682998282}     
@@ -46,16 +46,16 @@ class Assist(commands.Cog):
             break
        
     if ctx.channel.id == helper_channel["ch_america"]:
-      await ctx.send(f'<@&{helper_roles["america"]}>\n {ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
+      await ctx.send(f'<@&{helper_roles["america"]}>\n{ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
 
     elif ctx.channel.id == helper_channel["ch_europe"]:
-      await ctx.send(f'<@&{helper_roles["europe"]}>\n {ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
+      await ctx.send(f'<@&{helper_roles["europe"]}>\n{ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
 
     elif ctx.channel.id == helper_channel["ch_asia"]:
-      await ctx.send(f'<@&{helper_roles["asia"]}>\n {ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
+      await ctx.send(f'<@&{helper_roles["asia"]}>\n{ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
 
     elif ctx.channel.id == helper_channel["ch_hk/tw/mo"]:
-      await ctx.send(f'<@&{helper_roles["hk/tw/mo"]}>\n {ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
+      await ctx.send(f'<@&{helper_roles["hk/tw/mo"]}>\n{ctx.author.mention} Needs help for __{reason}__. WL = {wl}')
 
     else:
       await ctx.message.delete()

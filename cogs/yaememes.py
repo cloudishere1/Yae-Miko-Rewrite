@@ -36,7 +36,7 @@ class Memes(commands.Cog):
       async for submission in subreddit.new(limit = 100):
         memes_list.append(submission)
 
-    except asyncpraw.exceptions.PRAWExcetion as error:
+    except asyncpraw.exceptions.PRAWException as error:
       print(f"async praw error: {error}")
 
     except Exception:

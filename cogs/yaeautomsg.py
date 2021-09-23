@@ -39,7 +39,7 @@ class Yae_automsg(commands.Cog):
     if role not in before.roles:
       if role in after.roles:
         await channel.send(f"Thank you for boosting our shrine {after.mention}!<a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>\n"
-        f"You can create your own custom role and set your color name in <#888053538012413992>, check the pinned messages there for details!<a:YaeStonks:888090125832167484>")
+        f"You can create your own __custom role__ and set your __color name__ in <#888053538012413992>,\nYou can also apply for __custom role icon__, Please check the pinned messages there for more details! <a:YaeStonks:888090125832167484><a:YaeStonks:888090125832167484><a:YaeStonks:888090125832167484>")
 
   @commands.Cog.listener()
   async def on_member_join(self,member):

@@ -20,10 +20,8 @@ from discord.ext import commands
     ->to give shrine member role (shrine member role id: 888055555661398036)
 """
 """await member.dm_channel.send(
-          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to receive your **Shrine Member** role to access the server and get started! \n\n'
-          f"If you cannot get the `Shrine Member` role to enter the server after clicking the emote, try it again one more time but do not spam it.\n\n" 
-          f"If it still doesn't work, type the command `!!enter` in <#888054635305250856> in {guild.name}. **I cannot respond to commands in DMs**\n\n"
-          f"If it still does not give you the role, kindly contact **SHRINE CHIEF** or **SHRINE GUARD** for manual roles.\n\nOr you can send a message to me! <a:YaeWink_noBG2:832972418045050900>"""
+          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to get started!'
+        )"""
 
 class Yae_automsg(commands.Cog):
   
@@ -48,8 +46,11 @@ class Yae_automsg(commands.Cog):
     try: #this is the welcome DM code
       await member.create_dm()
       await member.dm_channel.send(
-          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to get started!'
-        )
+          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to receive your **Shrine Member** role to access the server and get started! \n\n'
+          f"If you cannot get the `Shrine Member` role to enter the server after getting roles from <#888054674798837770>, try it again but do not spam it.\n\n" 
+          f"If it still doesn't work, type the command `!!enter` in <#888054635305250856> in {guild.name}. **I cannot respond to commands in DMs**\n\n"
+          f"If it still does not give you the role, kindly contact **SHRINE CHIEF** or **SHRINE GUARD** for manual roles.\n\nOr you can send a message to me! <a:YaeWink_noBG2:832972418045050900>")
+
     except:
       pass    
 

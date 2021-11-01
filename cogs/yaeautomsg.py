@@ -1,7 +1,8 @@
 import discord
 import random
-
+import json
 from discord.ext import commands
+from asyncio import sleep
 
 """Auto message
 
@@ -18,10 +19,7 @@ from discord.ext import commands
 ->Auto role
   ->enter
     ->to give shrine member role (shrine member role id: 888055555661398036)
-"""
-"""await member.dm_channel.send(
-          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to get started!'
-        )"""
+"""       
 
 class Yae_automsg(commands.Cog):
   
@@ -36,8 +34,12 @@ class Yae_automsg(commands.Cog):
 
     if role not in before.roles:
       if role in after.roles:
-        await channel.send(f"Thank you for boosting our shrine {after.mention}!<a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>\n"
-        f"You can create your own __custom role__ and set your __color name__ in <#888053538012413992>,\nYou can also apply for __custom role icon__, Please check the pinned messages there for more details! <a:YaeStonks:888090125832167484><a:YaeStonks:888090125832167484><a:YaeStonks:888090125832167484>")
+        with open('messages.json','r') as msg:
+          message = json.load(msg)
+
+        content = message["on_boost"]
+        await channel.send(content.format(user = after.mention))
+        
 
   @commands.Cog.listener()
   async def on_member_join(self,member):
@@ -45,11 +47,11 @@ class Yae_automsg(commands.Cog):
 
     try: #this is the welcome DM code
       await member.create_dm()
-      await member.dm_channel.send(
-          f'Hello {member.name} <a:YaeJump:888060435042017320><a:YaeJump:888060435042017320><a:YaeJump:888060435042017320>, welcome to **{guild.name}**! Make sure to read the <#888054653877633074> to receive your **Shrine Member** role to access the server and get started! \n\n'
-          f"If you cannot get the `Shrine Member` role to enter the server after getting roles from <#888054674798837770>, try it again but do not spam it.\n\n" 
-          f"If it still doesn't work, type the command `!!enter` in <#888054635305250856> in {guild.name}. **I cannot respond to commands in DMs**\n\n"
-          f"If it still does not give you the role, kindly contact **SHRINE CHIEF** or **SHRINE GUARD** for manual roles.\n\nOr you can send a message to me! <a:YaeWink_noBG2:832972418045050900>")
+      with open('messages.json','r') as msg:
+        message = json.load(msg)
+      content = message["on_join_dm"]
+
+      await member.dm_channel.send(content.format(user = member.name, guild = guild.name))  
 
     except:
       pass    
@@ -78,7 +80,7 @@ class Yae_automsg(commands.Cog):
     embed.set_author(name = emb_author, icon_url = guild.icon_url)
     embed.set_thumbnail(url = emb_thumbnail)
     embed.set_footer(text= f"User ID:{member_id}")
-
+    await sleep(1)
     await channel.send(f"Hello {member.mention}, Welcome to our shrine!",embed=embed)
 
   @commands.command(name='enter', help= 'gives shrine member role', hidden = True)

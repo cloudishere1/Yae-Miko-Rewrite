@@ -27,7 +27,7 @@ class Error_Handler(commands.Cog):
       await ctx.send("Channel not found.")
 
     elif isinstance(error, commands.NotOwner):
-      await ctx.send("Dev command only")
+      pass
 
     elif isinstance(error, commands.CheckFailure):  
       await ctx.reply("Use this command in <#888053481007611966>.")

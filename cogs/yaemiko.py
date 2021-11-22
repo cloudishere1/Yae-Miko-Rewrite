@@ -4,7 +4,7 @@ from asyncio import sleep
 from discord.ext import commands
 
 """Commands for yae miko bot to interact in chat
-Permission: Shrine Chief, Cloud, Shrine Guard
+Permission: Shrine Chief, Cloud, Shrine Guard, Technician
 
 ->yae
   ->sends a message to a channel
@@ -29,7 +29,7 @@ class Yae_Miko(commands.Cog):
              help='Sends a message to a specific channel through the bot',
              hidden = True)
   @commands.has_any_role(888056856214401065, 888052696978952222,
-                       888055899694972950)        
+                       888055899694972950, 888062830002200596)        
   async def yae(self, ctx, channel : commands.TextChannelConverter = None, *, message = None):
     
     if ctx.author == self.bot.user:

@@ -111,6 +111,33 @@ class Yaemod(commands.Cog):
     elif isinstance(error, commands.BadArgument):
       await ctx.reply(f"Please input an integer on __count__ argument of the command. `{self.bot.command_prefix}tban [@user] [integer in seconds] <reason>`",delete_after = 5, mention_author = True)
 
+  @commands.command()
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950, 889019983777124422, 889560780234719272)  
+  async def slowmode(self,ctx,seconds: int, channel : commands.TextChannelConverter = None):
+    
+    if ctx.author != self.bot.user:
+        
+        if channel == None:
+          await ctx.channel.edit(slowmode_delay=seconds)
+          cnl = ""
+        else:
+          await channel.edit    (slowmode_delay=seconds)
+          cnl = f" in {channel.mention}"
+        
+        if seconds == 0:
+          await ctx.send(f"Slowmode has been disabled{cnl}")
+        else:
+          await ctx.send(f"**{seconds} seconds** __slowmode__ has been enabled{cnl}")
+
+  @slowmode.error
+  async def slowmode_error(self,ctx,error):
+    if isinstance(error, commands.MissingRequiredArgument):
+      await ctx.send(f"Please input time in seconds")  
+      return
+    if isinstance(error, commands.BadArgument):
+      await ctx.send (f"Invalid input, Please input time in integer only")
+      return
   
 def setup(bot):
   bot.add_cog(Yaemod(bot))

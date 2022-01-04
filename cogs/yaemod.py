@@ -114,7 +114,7 @@ class Yaemod(commands.Cog):
   @commands.command()
   @commands.has_any_role(888056856214401065, 888052696978952222,
                        888055899694972950, 889019983777124422, 889560780234719272)  
-  async def slowmode(self,ctx,seconds: int, channel : commands.TextChannelConverter = None):
+  async def slowmode(self,ctx,seconds: int = 0, channel : commands.TextChannelConverter = None):
     
     if ctx.author != self.bot.user:
         

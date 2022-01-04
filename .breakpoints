@@ -30,7 +30,7 @@
       {
         "id": "cfa20dce-40df-4c86-8a0f-14f9396fefc5",
         "line": 46,
-        "version": 1633,
+        "version": 1658,
         "index": 1094
       }
     ],
@@ -38,14 +38,14 @@
       {
         "id": "d45f96b1-c7ae-4110-b0fa-82ceecc81d45",
         "line": 39,
-        "version": 380,
-        "index": 960
+        "version": 397,
+        "index": 961
       },
       {
         "id": "ce80b86b-393a-4c61-8755-ff157c3b61da",
         "line": 42,
-        "version": 380,
-        "index": 1044
+        "version": 397,
+        "index": 1045
       }
     ],
     "cogs/yaemessage.py": [
@@ -60,8 +60,8 @@
       {
         "id": "9017ac1e-a2db-4188-b571-9c5481256073",
         "line": 34,
-        "version": 444,
-        "index": 828
+        "version": 446,
+        "index": 827
       }
     ]
   }

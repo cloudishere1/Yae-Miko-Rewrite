@@ -119,6 +119,7 @@ class Mod_Mail(commands.Cog):
                 await confirmation.remove_reaction("❤️",self.bot.user)
                 mailembed.title = "Confirmed ✅"
                 mailembed.description = "Creating a modmail channel. Please wait."
+                mailembed.clear_fields()
                 await confirmation.edit(embed=mailembed) 
 
                 yaeGuild = self.bot.get_guild(888052002368671804)
@@ -190,6 +191,7 @@ class Mod_Mail(commands.Cog):
                 await confirmation.remove_reaction("❤️",self.bot.user)
                 mailembed.title = "Cancelled ❌"
                 mailembed.description = "Request has been cancelled, deleting this message in 5 seconds"
+                mailembed.clear_fields()
                 await confirmation.edit(embed=mailembed, delete_after = 5)
                 reacted_with = "Prompt activated and reacted with ❌"
 
@@ -198,6 +200,7 @@ class Mod_Mail(commands.Cog):
                 await confirmation.remove_reaction("❌",self.bot.user)
                 mailembed.title = "Thank you for your message ❤️"
                 mailembed.description = "Your message has been delivered to my mailbox."
+                mailembed.clear_fields()
                 await confirmation.edit(embed=mailembed)  
                 reacted_with = "A message for me! ❤️"
 
@@ -206,7 +209,8 @@ class Mod_Mail(commands.Cog):
         
             except asyncio.TimeoutError: #no response within 30 seconds
               mailembed.title = "Timeout Cancelled ❌"
-              mailembed.description = "No response was given within 15 seconds. Request has been cancelled, deleting this message in 5 seconds"
+              mailembed.description = "No response was given within 30 seconds. Request has been cancelled."
+              mailembed.clear_fields()
               await confirmation.edit(embed=mailembed, delete_after = 5)  
               self.authorlist.remove(author)
               reacted_with = "Modmail prompt timedout"

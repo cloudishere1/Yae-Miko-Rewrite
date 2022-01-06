@@ -98,9 +98,11 @@ class Mod_Mail(commands.Cog):
               mailembed.title = "Modmail Request Prompt (timeout = 30s)"
 
               confirmation = await modmail.send(embed = mailembed)
-              await confirmation.add_reaction("✅")
-              await confirmation.add_reaction("❌")
               await confirmation.add_reaction("❤️")
+              await confirmation.add_reaction("❌")
+              await confirmation.add_reaction("✅")
+  
+              
 
             except discord.Forbidden:
               print("nope")  
@@ -219,6 +221,49 @@ class Mod_Mail(commands.Cog):
           else:
             reacted_with = "sent messages during the prompt"
             await sendembed()
+            
+      ####Logs replies to #Modmail-logs
+      elif str(message.channel.category) == "modmail":
+          
+          attachment = message.attachments
+          sticker = message.stickers
+
+          modmail_logs = self.bot.get_channel(927602797732560926)
+          modmail_logs_embed = discord.Embed(author = self.bot.user,
+                              description = "A message in a modmail was sent.",
+                              colour = 0xFF00FF)
+
+          modmail_logs_embed.title = "MODMAIL REPLY"
+          modmail_logs_embed.set_footer(text=f"UserID: {message.author.id}")
+          modmail_logs_embed.timestamp = datetime.datetime.now()
+
+          modmail_logs_embed.add_field(name="Channel", value = message.channel.mention)
+          modmail_logs_embed.add_field(name="User", value = message.author.mention)
+
+          if message.attachments:
+            if message.content == "":
+              message_value = "Attachments below"
+            
+            else:
+              message_value = f"{message.content}"
+              modmail_logs_embed.add_field(name="Attachments", value = "Attachments below", inline = False)  
+            
+            modmail_logs_embed.insert_field_at(index = 2, name="Message", value = message_value, inline = False)
+            await modmail_logs.send(embed=modmail_logs_embed)
+
+            for items in attachment:
+              await modmail_logs.send(items.url)
+
+            await modmail_logs.send(f"--- End of Attachments --- from {message.author.mention}")  
+
+          else:
+            modmail_logs_embed.add_field(name="Message", value = message.content, inline = False)
+            await modmail_logs.send(embed=modmail_logs_embed)
+
+
+          if message.stickers:
+            for stuffs in sticker:
+              await modmail_logs.send(stuffs.image_url)   
 
   @commands.command(name = "mmreply", help = "reply to a modmail", aliases = ["mrep","mmr","rep"],hidden = True)
   @commands.has_any_role(888056856214401065, 888052696978952222,

@@ -221,14 +221,14 @@ class Mod_Mail(commands.Cog):
           else:
             reacted_with = "sent messages during the prompt"
             await sendembed()
-            
+
       ####Logs replies to #Modmail-logs
       elif str(message.channel.category) == "modmail":
           
           attachment = message.attachments
           sticker = message.stickers
 
-          modmail_logs = self.bot.get_channel(927602797732560926)
+          modmail_logs = self.bot.get_channel(927602714710528051)
           modmail_logs_embed = discord.Embed(author = self.bot.user,
                               description = "A message in a modmail was sent.",
                               colour = 0xFF00FF)

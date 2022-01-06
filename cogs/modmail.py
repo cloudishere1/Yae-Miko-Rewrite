@@ -7,6 +7,12 @@ import asyncio
 ->global yaewhat reaction 0.5% chance to trigger
 ->Yaepray reaction on yaepray in yaeshrine(yaeshrine channel id: 888052924662575104)
 ->Yae's DM Mailbox (mailbox channel id: 888068697107869756)
+
+-> Modmail will create a new private channel for people who dms the bot after confirming it
+
+->!!mmreply -> reply to a modmail channel
+->!!anon -> reply to a modmail channel anonymously
+->!!close -> deletes the modmail channel
 """
 
 from discord.ext import commands
@@ -77,14 +83,19 @@ class Mod_Mail(commands.Cog):
               modmail = await message.author.create_dm()
 
               mailembed = discord.Embed(author = "Modmail Request",
-              description = f"Hello there {message.author.mention}! You are about to send a message to the moderators. This will open a private modmail in Yae Miko Mains server.\n\n"
-              f"Press ✅ to confirm\n"
-              f"Press ❌ to cancel\n\n"
+              description =  f"**__WARNING: If you do not have any concern, please press ❌ to cancel__**\n"
+              f"**__Opening a modmail without any concern will result to an infraction__**\n\n"
+    
+              f"Hello there {message.author.mention}! You are about to send a message to the moderators. This will open a **private modmail** in __Yae Miko Mains | Genshin Impact server__.\n\n"
 
-              f"If you just wish to send me a message, you can press ❤️ to send it to my mailbox",
+              f"If you just wish to send me a message, you can press ❤️ and i shall receive it!\n\n",
               colour = 0xFF99CC)
 
-              mailembed.title = "Modmail Request (timeout = 30 seconds)"
+              mailembed.add_field(name= "Do you wish to open a modmail?", value = 
+              f"Press ✅ to confirm\n"
+              f"Press ❌ to cancel", inline = False)
+
+              mailembed.title = "Modmail Request Prompt (timeout = 30s)"
 
               confirmation = await modmail.send(embed = mailembed)
               await confirmation.add_reaction("✅")
@@ -163,7 +174,7 @@ class Mod_Mail(commands.Cog):
                 modmail_logs_embed.add_field(name="User", value = message.author.mention)
                 modmail_logs_embed.add_field(name="Message", value = message.content, inline = False)
 
-                await modmail_logs.send(content = f"{modRole.mention} | {bonkerRole.mention} | {traineeRole.mention}", embed=modmail_logs_embed)
+                await modmail_logs.send(embed=modmail_logs_embed)
 
                 #send this message inside the private modmail
                 await newChannel.send(f"{intro}\n\n" 

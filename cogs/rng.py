@@ -103,7 +103,7 @@ class Play(commands.Cog):
 
   #Artifact RNG simulator
   @commands.command(name='feather',
-             help='simulates the stat rolling of feather artifact')
+             help='simulates the stat rolling of feather artifact', aliases = ["plume"])
   @commands.check(artifact_channel)               
   async def feather(self,ctx):
 
@@ -116,21 +116,21 @@ class Play(commands.Cog):
 
       await artifactsim.flower(ctx)
 
-  @commands.command(name='sand', help='simulates the stat rolling of sand artifact')
+  @commands.command(name='sand', help='simulates the stat rolling of sand artifact',aliases = ["sands","hourglass"])
   @commands.check(artifact_channel)    
   async def sands(self,ctx):
 
       await artifactsim.sand(ctx)
 
   @commands.command(name='goblet',
-              help='simulates the stat rolling of goblet artifact')
+              help='simulates the stat rolling of goblet artifact', aliases = ["cup"])
   @commands.check(artifact_channel)                
   async def goblet(self,ctx):
 
       await artifactsim.goblet(ctx)
 
   @commands.command(name='circlet',
-              help='simulates the stat rolling of circlet artifact')
+              help='simulates the stat rolling of circlet artifact', aliases = ["headgear"])
   @commands.check(artifact_channel)                
   async def circlet(self,ctx):
 

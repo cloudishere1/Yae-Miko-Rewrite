@@ -62,9 +62,7 @@ class Yae_automsg(commands.Cog):
     emb_thumbnail = member.avatar_url
     emb_author = guild.name
     member_id = member.id
-    emb_image = ["https://media.discordapp.net/attachments/765662367538610198/858717661092249620/ezgif-6-692e7b979e07.gif",
-      "https://cdn.discordapp.com/attachments/765662367538610198/879764015461580810/ezgif-6-5e4d6b21d808.gif",
-      "https://media.discordapp.net/attachments/765662367538610198/882288825215377499/ezgif-6-e324bbbb68ff.gif"]
+    emb_image = ["https://media.discordapp.net/attachments/888054281125658684/929556543895121970/Yae_Miko_Mains_Welcome.png"]
 
     emb_title = f"Welcome to {guild.name} | Genshin Impact!"
     emb_description = (f"Make sure to read our simple <#888054653877633074> and follow the instructions there to access the server.") 

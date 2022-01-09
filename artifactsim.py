@@ -1,4 +1,5 @@
 import random
+import discord
 
 def globalvar():
   #name, mainstat value, rngupgrade1, rng2,rng3,rng4,weight
@@ -172,7 +173,7 @@ def maincirclet():
 
   message[5] = "Circlet of Logos"  
       
-async def get_substat(ctx):
+async def get_substat(ctx,thumbnail):
   count = 0 
   total_weight = 0 
   upgrade = 0
@@ -225,8 +226,7 @@ async def get_substat(ctx):
     count = 0
 
     message[0] = (f'**{message[5]} : +20**\n'
-    f'**{Mainstat[0]} = {Mainstat[1]}**\n'
-    f'__Substats:__')
+    f'**{Mainstat[0]} = {Mainstat[1]}**')
 
     #RNG for getting 4th line if line = 3
   if line == 3:
@@ -251,16 +251,15 @@ async def get_substat(ctx):
     upgrade += 1
     count = 0
     
-    message[1] = (f'{stat[0][0]} = {round(value[0],1)}\n'
+    splitmsg = (f'{stat[0][0]} = {round(value[0],1)}\n'
         f'{stat[1][0]} = {round(value[1],1)}\n'
-        f'{stat[2][0]} = {round(value[2],1)}\n\n'
+        f'{stat[2][0]} = {round(value[2],1)}\n\n')
     
-        f'__Upgrade #{upgrade} +4:__ *{stat[line][0]}* **+{value[line]}**\n'
+    message[1] = (f'__**{stat[line][0]}** **+{value[line]}**__\n\n'
         f'{stat[0][0]} = {round(value[0],1)}\n'
         f'{stat[1][0]} = {round(value[1],1)}\n'
         f'{stat[2][0]} = {round(value[2],1)}\n'
-        f'{stat[3][0]} = {round(value[3],1)}\n'
-    )
+        f'{stat[3][0]} = {round(value[3],1)}\n')
 
   total_weight = 0
 
@@ -308,40 +307,61 @@ async def get_substat(ctx):
 
     upgrade += 1
 
-    message[upgrade] = (f'__upgrade# {upgrade} +{upgrade *4}__: *{stat[count][0]}* **+{stat[count][y]}**\n'
+    message[upgrade] = (f'__**{stat[count][0]}** **+{stat[count][y]}**__\n\n'
         f'{stat[0][0]} = {round(value[0],1)}\n'
         f'{stat[1][0]} = {round(value[1],1)}\n'
         f'{stat[2][0]} = {round(value[2],1)}\n'
         f'{stat[3][0]} = {round(value[3],1)}\n'
     )
     if line == 4 and upgrade == 1:
-      message[1] = message[4] + message[1]
+      splitmsg = message[4]
 
-  await ctx.reply(f'{message[0]}\n{message[1]}\n{message[2]}\n{message[3]}\n{message[4]}\n{message[5]}', mention_author = True)
+  #await ctx.reply(f'{message[0]}\n{message[1]}\n{message[2]}\n{message[3]}\n{message[4]}\n{message[5]}', mention_author = True)
+  embed = discord.Embed(author = "Artifact RNG",
+                         colour = 0xff99cc)
+  
+  embed.title = message[0]
+  embed.set_author(name = "Artifact Simulator RNG",icon_url = thumbnail)
+  print(thumbnail)
+  embed.add_field(name = "Initial Substats", value = splitmsg,inline=False)                       
+  embed.add_field(name = "Upgrade #1: +4", value = message[1])
+  embed.add_field(name = "Upgrade #2: +8", value = message[2])
+  embed.add_field(name = "Upgrade #3: +12", value = message[3])
+  embed.add_field(name = "Upgrade #4: +16", value = message[4])
+  embed.add_field(name = "Upgrade #5: +20", value = message[5])
+  embed.add_field(name = u"\u200B", value = u"\u200B")
+  await ctx.reply(embed=embed, mention_author = True)
+
   
 async def feather(ctx):
   
   globalvar()
   mainfeather()
-  await get_substat(ctx)
+  thumbnail = "https://static.wikia.nocookie.net/gensin-impact/images/8/8b/Icon_Plume_of_Death.png/revision/latest?cb=20210712005411"
+  await get_substat(ctx,thumbnail)
+  
   
 async def flower(ctx):
 
   globalvar()
   mainflower()
-  await get_substat(ctx)
+  thumbnail = "https://static.wikia.nocookie.net/gensin-impact/images/2/2d/Icon_Flower_of_Life.png/revision/latest?cb=20210712005358"
+  await get_substat(ctx,thumbnail)
 
 async def sand(ctx):
   globalvar()
   mainsand()
-  await get_substat(ctx)
+  thumbnail = "https://static.wikia.nocookie.net/gensin-impact/images/9/9f/Icon_Sands_of_Eon.png/revision/latest?cb=20210713185616"
+  await get_substat(ctx,thumbnail)
 
 async def goblet(ctx):
   globalvar()
   maingoblet()
-  await get_substat(ctx)
+  thumbnail = "https://static.wikia.nocookie.net/gensin-impact/images/3/37/Icon_Goblet_of_Eonothem.png/revision/latest?cb=20210713185527"
+  await get_substat(ctx,thumbnail)
 
 async def circlet(ctx):
   globalvar()
   maincirclet()
-  await get_substat(ctx)
+  thumbnail = "https://static.wikia.nocookie.net/gensin-impact/images/6/64/Icon_Circlet_of_Logos.png/revision/latest?cb=20210712005353"
+  await get_substat(ctx,thumbnail)

@@ -330,6 +330,7 @@ async def get_substat(ctx,thumbnail):
   embed.add_field(name = "Upgrade #4: +16", value = message[4])
   embed.add_field(name = "Upgrade #5: +20", value = message[5])
   embed.add_field(name = u"\u200B", value = u"\u200B")
+  embed.set_footer(text = "Bot made by Cloud#3260. For any errors, please DM Cloud#3260.")
   await ctx.reply(embed=embed, mention_author = True)
 
   

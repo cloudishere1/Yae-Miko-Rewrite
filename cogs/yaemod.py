@@ -160,7 +160,8 @@ class Yaemod(commands.Cog):
       await tc2.set_permissions(member, overwrite = overwrite)
       await tc3.set_permissions(member, overwrite = overwrite)
 
-      await logs.send(f"{member.mention} has been shadowbanned in TC channels\n")
+      await logs.send(f"{member.mention} has been shadowbanned in TC channels.\n")
+      await ctx.send(f"{member.mention} has been shadowbanned in TC channels.\n")
 
   @tcban.error
   async def tcban_error(self, ctx, error):
@@ -187,7 +188,7 @@ class Yaemod(commands.Cog):
       await tc3.set_permissions(member, overwrite = None)
 
       await logs.send(f"{member.mention} has been unshadowbanned in TC channels\n")
-
+      await ctx.send(f"{member.mention} has been shadowbanned in TC channels.\n")
 
   @tcunban.error
   async def tcunban_error(self, ctx, error):

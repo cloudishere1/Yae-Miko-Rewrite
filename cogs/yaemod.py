@@ -187,8 +187,8 @@ class Yaemod(commands.Cog):
       await tc2.set_permissions(member, overwrite = None)
       await tc3.set_permissions(member, overwrite = None)
 
-      await logs.send(f"{member.mention} has been unshadowbanned in TC channels\n")
-      await ctx.send(f"{member.mention} has been shadowbanned in TC channels.\n")
+      await logs.send(f"TC shadowban of {member.mention} has been lifted.\n")
+      await ctx.send(f"TC shadowban of {member.mention} has been lifted.\n")
 
   @tcunban.error
   async def tcunban_error(self, ctx, error):

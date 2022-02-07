@@ -142,7 +142,7 @@ class Yaemod(commands.Cog):
 
   @commands.command()
   @commands.has_any_role(888056856214401065, 888052696978952222,
-                       888055899694972950)  
+                       888055899694972950, 889019983777124422)  
   async def tcban(self, ctx, member : commands.MemberConverter = None):
 
     if ctx.author != self.bot.user:
@@ -175,7 +175,7 @@ class Yaemod(commands.Cog):
   
   @commands.command()
   @commands.has_any_role(888056856214401065, 888052696978952222,
-                       888055899694972950)  
+                       888055899694972950, 889019983777124422)  
   async def tcunban(self, ctx, member : commands.MemberConverter = None):
       
       tc1 = self.bot.get_channel(929534880285605888) #yae-theorycrafting

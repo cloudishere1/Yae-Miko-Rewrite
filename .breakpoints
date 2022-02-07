@@ -1,5 +1,13 @@
 {
   "files": {
+    "cogs/error_handler.py": [
+      {
+        "id": "6d761251-877b-4e96-8871-b3f8fb7350d1",
+        "line": 6,
+        "version": 1510,
+        "index": 66
+      }
+    ],
     "cogs/redditcheck.py": [
       {
         "id": "2e2b4e3a-dc2f-49c8-88b2-8cc743e3d808",
@@ -60,8 +68,8 @@
       {
         "id": "9017ac1e-a2db-4188-b571-9c5481256073",
         "line": 34,
-        "version": 450,
-        "index": 828
+        "version": 452,
+        "index": 827
       }
     ]
   }

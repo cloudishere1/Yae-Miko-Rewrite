@@ -138,6 +138,67 @@ class Yaemod(commands.Cog):
     if isinstance(error, commands.BadArgument):
       await ctx.send (f"Invalid input, Please input time in integer only")
       return
+
+
+  @commands.command()
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)  
+  async def tcban(self, ctx, member : commands.MemberConverter = None):
+
+    if ctx.author != self.bot.user:
+      
+      tc1 = self.bot.get_channel(929534880285605888) #yae-theorycrafting
+      tc2 = self.bot.get_channel(888069450438414447) #theorycrafting
+      tc3 = self.bot.get_channel(934113243608272956) #questions and answer
+      logs = self.bot.get_channel(888059178743111690) #mod logs
+
+      overwrite = discord.PermissionOverwrite()
+      overwrite.send_messages = False
+      overwrite.read_messages = True
+
+      await tc1.set_permissions(member, overwrite = overwrite)
+      await tc2.set_permissions(member, overwrite = overwrite)
+      await tc3.set_permissions(member, overwrite = overwrite)
+
+      await logs.send(f"{member.mention} has been shadowbanned in TC channels\n")
+
+  @tcban.error
+  async def tcban_error(self, ctx, error):
+    if isinstance(error, commands.MemberNotFound):
+      await ctx.send(error)
+      return
+
+    if isinstance(error, commands.MissingRequiredArgument):
+      await ctx.send(f"Target user was not specified.\n`{self.bot.command_prefix}yaedm [@user/user ID] <message>`")
+      return
   
+  @commands.command()
+  @commands.has_any_role(888056856214401065, 888052696978952222,
+                       888055899694972950)  
+  async def tcunban(self, ctx, member : commands.MemberConverter = None):
+      
+      tc1 = self.bot.get_channel(929534880285605888) #yae-theorycrafting
+      tc2 = self.bot.get_channel(888069450438414447) #theorycrafting
+      tc3 = self.bot.get_channel(934113243608272956) #questions and answer
+      logs = self.bot.get_channel(888059178743111690) #mod logs
+
+      await tc1.set_permissions(member, overwrite = None)
+      await tc2.set_permissions(member, overwrite = None)
+      await tc3.set_permissions(member, overwrite = None)
+
+      await logs.send(f"{member.mention} has been unshadowbanned in TC channels\n")
+
+
+  @tcunban.error
+  async def tcunban_error(self, ctx, error):
+    if isinstance(error, commands.MemberNotFound):
+      await ctx.send(error)
+      return
+
+    if isinstance(error, commands.MissingRequiredArgument):
+      await ctx.send(f"Target user was not specified.\n`{self.bot.command_prefix}yaedm [@user/user ID] <message>`")
+      return
+
+
 def setup(bot):
   bot.add_cog(Yaemod(bot))

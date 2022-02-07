@@ -1357,3 +1357,516 @@ WARNING:werkzeug: * Running on all addresses.
 INFO:werkzeug: * Running on http://172.18.0.88:8080/ (Press CTRL+C to quit)
 INFO:werkzeug:172.18.0.1 - - [04/Jan/2022 15:20:39] "GET / HTTP/1.1" 200 -
 INFO:werkzeug:172.18.0.1 - - [04/Jan/2022 15:21:23] "HEAD / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.55:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 07:32:06] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 07:32:11] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 07:37:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 07:42:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 07:47:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 07:52:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 07:57:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:02:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:07:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:12:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:17:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:22:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:27:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:32:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:37:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:42:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:47:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:52:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 08:57:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:02:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:07:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:12:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:17:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:22:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:27:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:32:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:37:11] "HEAD / HTTP/1.1" 200 -
+ERROR:discord.client:Attempting a reconnect in 1.77s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 3.42s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 1.52s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 8.27s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 15.48s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 62.49s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 98.92s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 31.57s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 291.73s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:42:11] "HEAD / HTTP/1.1" 200 -
+ERROR:discord.client:Attempting a reconnect in 249.35s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:47:11] "HEAD / HTTP/1.1" 200 -
+ERROR:discord.client:Attempting a reconnect in 967.14s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:52:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 09:57:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:02:11] "HEAD / HTTP/1.1" 200 -
+ERROR:discord.client:Attempting a reconnect in 404.68s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:07:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:12:11] "HEAD / HTTP/1.1" 200 -
+ERROR:discord.client:Attempting a reconnect in 880.50s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:17:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:22:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:27:11] "HEAD / HTTP/1.1" 200 -
+ERROR:discord.client:Attempting a reconnect in 415.85s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:32:11] "HEAD / HTTP/1.1" 200 -
+ERROR:discord.client:Attempting a reconnect in 73.52s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+ERROR:discord.client:Attempting a reconnect in 844.14s
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 967, in get_gateway
+    data = await self.request(Route('GET', '/gateway'))
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 216, in request
+    raise HTTPException(r, data)
+discord.errors.HTTPException: 429 Too Many Requests (error code: 0): You are being blocked from accessing our API temporarily due to exceeding our rate limits frequently. Please read our docs at https://discord.com/developers/docs/topics/rate-limits to prevent this moving forward.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/client.py", line 563, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+  File "/usr/lib/python3.8/asyncio/tasks.py", line 494, in wait_for
+    return fut.result()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/gateway.py", line 305, in from_client
+    gateway = gateway or await client.http.get_gateway()
+  File "/opt/virtualenvs/python3/lib/python3.8/site-packages/discord/http.py", line 969, in get_gateway
+    raise GatewayNotFound() from exc
+discord.errors.GatewayNotFound: The gateway to connect to discord was not found.
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:37:11] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:40:10] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.55:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 10:40:25] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.223:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [29/Jan/2022 11:07:53] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.110:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [30/Jan/2022 02:38:30] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.153:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [30/Jan/2022 11:18:28] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.1.11:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [31/Jan/2022 02:23:39] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.254:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [31/Jan/2022 02:54:30] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.99:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [31/Jan/2022 04:13:28] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.1.81:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [31/Jan/2022 23:04:09] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.65:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 00:43:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 00:47:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 00:52:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 00:57:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:02:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:07:45] "HEAD / HTTP/1.1" 200 -
+WARNING:discord.http:We are being rate limited. Retrying in 1.96 seconds. Handled under the bucket "937877453790126131:None:/channels/{channel_id}/messages"
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:12:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:17:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:22:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:27:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:32:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:37:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:42:45] "HEAD / HTTP/1.1" 200 -
+WARNING:discord.http:We are being rate limited. Retrying in 0.24 seconds. Handled under the bucket "937886641194958900:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.23 seconds. Handled under the bucket "937886641194958900:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.22 seconds. Handled under the bucket "937886641194958900:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.21 seconds. Handled under the bucket "937886641194958900:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.23 seconds. Handled under the bucket "937886641194958900:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:47:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:52:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 01:57:45] "HEAD / HTTP/1.1" 200 -
+WARNING:discord.http:We are being rate limited. Retrying in 0.17 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.20 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.24 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.21 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.18 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.12 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.20 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 02:02:45] "HEAD / HTTP/1.1" 200 -
+WARNING:discord.http:We are being rate limited. Retrying in 0.22 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+WARNING:discord.http:We are being rate limited. Retrying in 0.20 seconds. Handled under the bucket "920872476827848796:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me"
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 02:07:45] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 02:10:18] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.123:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [01/Feb/2022 23:54:32] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.30:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [02/Feb/2022 03:19:33] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.114:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [02/Feb/2022 05:34:34] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.59:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [02/Feb/2022 20:20:15] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.94:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [03/Feb/2022 05:10:17] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.1.80:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [03/Feb/2022 05:51:05] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.13:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [03/Feb/2022 06:55:02] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.132:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [04/Feb/2022 04:34:43] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.19:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [04/Feb/2022 15:54:21] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.56:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [05/Feb/2022 10:24:27] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.82:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [06/Feb/2022 07:04:23] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.18.0.18:8080/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 02:34:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 02:38:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 02:43:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 02:48:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 02:53:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 02:58:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:03:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:08:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:13:56] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:18:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:23:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:28:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:33:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:38:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:43:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:48:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:53:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 03:58:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:03:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:08:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:13:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:18:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:23:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:28:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:30:14] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:33:57] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:38:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:43:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:48:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:53:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 04:58:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 05:03:54] "HEAD / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 05:05:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.1 - - [07/Feb/2022 05:08:54] "HEAD / HTTP/1.1" 200 -

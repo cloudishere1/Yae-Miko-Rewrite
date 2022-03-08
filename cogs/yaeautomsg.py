@@ -9,7 +9,7 @@ from asyncio import sleep
 -> on member update
   ->Server Boost message 
     ->boost role id: 888053107601338389)
-    ->Announcement channel id: 888053718182932480
+    ->Booster role channel id: 888053538012413992
   
 -> on member join
   ->DM the instruction
@@ -30,7 +30,7 @@ class Yae_automsg(commands.Cog):
   async def on_member_update(self,before,after):
   
     role = discord.utils.get(before.guild.roles, id=888053107601338389)
-    channel = self.bot.get_channel(888053718182932480)
+    channel = self.bot.get_channel(888053538012413992)
 
     if role not in before.roles:
       if role in after.roles:

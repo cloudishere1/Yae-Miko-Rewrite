@@ -58,7 +58,22 @@ class Mod_Mail(commands.Cog):
 
     if message.author != self.bot.user:
 
+      #Ko-fi logs stuff
+      kofi_channel = self.bot.get_channel(951587462965235793)
+      parsed_message = ""
+
+      if message.content.startswith('{"message_id":'):
+        if message.channel.id == 952430465053253642:
+          msg_content = message.content.split(",")
+          for msg_line in msg_content:
+            msg_line = msg_line.replace('{',"")
+            msg_line = msg_line.replace('}',"")
+            parsed_message = parsed_message + msg_line + '\n'
+  
+          final_message = parsed_message.split("Sent via")
+          await kofi_channel.send(final_message[0])
       #random yaewhat react 
+      
       if message.guild != None:
         randx = random.random()
         if randx < .005:

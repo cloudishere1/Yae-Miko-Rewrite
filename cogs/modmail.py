@@ -72,6 +72,7 @@ class Mod_Mail(commands.Cog):
   
           final_message = parsed_message.split("Sent via")
           await kofi_channel.send(final_message[0])
+          
       #random yaewhat react 
       
       if message.guild != None:

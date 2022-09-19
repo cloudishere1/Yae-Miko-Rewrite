@@ -38,8 +38,8 @@
       {
         "id": "cfa20dce-40df-4c86-8a0f-14f9396fefc5",
         "line": 46,
-        "version": 1677,
-        "index": 1094
+        "version": 1686,
+        "index": 1095
       }
     ],
     "cogs/yaememes.py": [
@@ -67,9 +67,9 @@
     "main.py": [
       {
         "id": "9017ac1e-a2db-4188-b571-9c5481256073",
-        "line": 34,
-        "version": 452,
-        "index": 827
+        "line": 36,
+        "version": 455,
+        "index": 860
       }
     ]
   }

@@ -26,7 +26,7 @@ def globalvar():
   global HealP
   HealP = ["Healing Bonus%", 35.9]
   global Elements
-  Elements = ["Hydro Damage%","Pyro Damage%","Cryo Damage%","Electro Damage%","Geo Damage%","Anemo Damage%",46.6]
+  Elements = ["Hydro Damage%","Pyro Damage%","Cryo Damage%","Electro Damage%","Geo Damage%","Anemo Damage%", "Dendro Damage%", 46.6]
   global Physical
   Physical = ["Physical Damage%", 58.3]
   global Elem_P
@@ -120,24 +120,27 @@ def maingoblet():
     Mainstat[1] = Goblet[4][1]
   else:
     ran = ran - 70
-    if ran < 5:
+    if ran < (30/7):
       Mainstat[0] = Goblet[5][0]
-      Mainstat[1] = Goblet[5][6]
-    elif ran < 10:
+      Mainstat[1] = Goblet[5][7]
+    elif ran < (60/7):
       Mainstat[0] = Goblet[5][1]
-      Mainstat[1] = Goblet[5][6]  
-    elif ran < 15:
+      Mainstat[1] = Goblet[5][7]  
+    elif ran < (90/7):
       Mainstat[0] = Goblet[5][2]
-      Mainstat[1] = Goblet[5][6]  
-    elif ran < 20:
+      Mainstat[1] = Goblet[5][7]  
+    elif ran < (120/7):
       Mainstat[0] = Goblet[5][3]
-      Mainstat[1] = Goblet[5][6]
-    elif ran < 25:
+      Mainstat[1] = Goblet[5][7]
+    elif ran < (150/7):
       Mainstat[0] = Goblet[5][4]
-      Mainstat[1] = Goblet[5][6]  
-    else:
+      Mainstat[1] = Goblet[5][7]  
+    elif ran < (180/7):
       Mainstat[0] = Goblet[5][5]
-      Mainstat[1] = Goblet[5][6] 
+      Mainstat[1] = Goblet[5][7] 
+    else:
+      Mainstat[0] = Goblet[5][6]
+      Mainstat[1] = Goblet[5][7]   
 
   message[5] = "Goblet of Eonothem"    
 

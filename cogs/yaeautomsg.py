@@ -8,7 +8,7 @@ from asyncio import sleep
 
 -> on member update
   ->Server Boost message 
-    ->boost role id: 888053107601338389)
+    ->boost role id: (888053107601338389)
     ->Booster role channel id: 888053538012413992
   
 -> on member join

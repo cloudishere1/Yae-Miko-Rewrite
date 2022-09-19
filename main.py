@@ -7,6 +7,8 @@ from discord.ext import commands
 my_secret = os.environ['DToken']
 intents = discord.Intents.default()
 intents.members = True
+#intents.message_content = True
+
 owner = os.environ['DevID']
 bot = commands.Bot(command_prefix='!!',
                   owner_id = int(owner),

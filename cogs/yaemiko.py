@@ -52,7 +52,7 @@ class Yae_Miko(commands.Cog):
       help='edits the specified message link, (can only edit the bot message)',
              hidden = True)
   @commands.has_any_role(888056856214401065, 888052696978952222,
-                       888055899694972950)        
+                       888055899694972950, 888062830002200596)        
   async def edit(self, ctx, message_link: discord.Message, *, new_message=None):
     
     if new_message == None:
@@ -74,7 +74,7 @@ class Yae_Miko(commands.Cog):
              help='replies to the specified message link',
              hidden = True)
   @commands.has_any_role(888056856214401065, 888052696978952222,
-                       888055899694972950)      
+                       888055899694972950, 888062830002200596)      
   async def reply(self, ctx, message_link: discord.Message, *, message = None):
     
     if message == None:
@@ -93,7 +93,7 @@ class Yae_Miko(commands.Cog):
             help='Reacts to the specified message link with given reaction',
              hidden = True)
   @commands.has_any_role(888056856214401065, 888052696978952222,
-                       888055899694972950)        
+                       888055899694972950, 888062830002200596)        
   async def react(self,ctx, message_link: discord.Message, emoji : commands.EmojiConverter = None):
     
     if emoji == None:
@@ -117,7 +117,7 @@ class Yae_Miko(commands.Cog):
             help = "DMs a specified user with given message",
             hidden = True)
   @commands.has_any_role(888056856214401065, 888052696978952222,
-                       888055899694972950)     
+                       888055899694972950, 888062830002200596)     
   async def yaedm(self, ctx, member : commands.MemberConverter, *, message = None):
     
     if message == None:
@@ -149,7 +149,7 @@ class Yae_Miko(commands.Cog):
 
   @commands.command(name = "slowsend", help = "Sends a message one letter at a time. (Character limit: 60)", hidden = True, aliases =["ss", "slow"])
   @commands.has_any_role(888056856214401065, 888052696978952222,
-                       888055899694972950)       
+                       888055899694972950, 888062830002200596)       
   @commands.cooldown(1, 60, commands.BucketType.guild)                     
   async def slowsend(self,ctx,channel: commands.TextChannelConverter = None, *, message):
     
